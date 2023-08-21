@@ -7,7 +7,7 @@ def announcement_detail(request, pk):
     context['announcement'] = zakup_item
     context['item_exist'] = True if zakup_item else False
     print("Announcement: ", pk)
-    return render(request, 'announcement/zakupitem.html', context)
+    return render(request, 'announcement/announcement.html', context)
 
 
 def announcements(request):

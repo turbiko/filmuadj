@@ -1,0 +1,15 @@
+{% extends "film_base.html" %}
+
+{% block content %}
+
+{% for item in announcements %}
+<br>
+
+<h2><a href="infotables/{{item.slug}}">{{item.title}}</a></h2>
+
+<p>початок {{item.start_date}} до {{item.end_date}} включно<p>
+
+{% endfor %}
+
+{% endblock content %}
+

@@ -1,0 +1,13 @@
+{% extends "film_base.html" %}
+
+{% block content %}
+
+{{self.title}}<br>
+{{self.body|safe}}<br>
+{{self.template_document.url}}<br>
+{{self.start_date}}<br>
+{{self.end_date}}<br>
+{% endblock content %}
+
+
+
