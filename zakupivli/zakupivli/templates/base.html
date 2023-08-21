@@ -1,0 +1,150 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %}
+        </title>
+        {% if page.search_description %}
+        <meta name="description" content="{{ page.search_description }}" />
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Force all links in the live preview panel to be opened in a new tab #}
+        {% if request.in_preview_panel %}
+        <base target="_blank">
+        {% endif %}
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/zakupivli.css' %}">
+
+        {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+<div id="header">
+  <div class="b-header">
+    <div class="b-header-holder">
+      <div class="b-logo">
+                  <a href="/uk/"><img src="/images/logo.png" alt="Site name" /></a>
+              </div>
+
+
+      <div class="b-header-menu">
+        <a href="/uk/news" class="news">Новини</a>
+        <a href="/uk/about" class="aboutus">Про групу</a>
+        <a href="/uk/services" class="services">Сервіси</a>
+        <a href="/uk/contacts" class="contacts">Контакти</a>
+        <a href="https://store.film.ua" target="_blank">Магазин</a>
+      </div>
+
+      <div class="b-header-social">
+	<a href="https://www.youtube.com/c/FILMUALIVE" target="_blank" class="filmualive" ></a>
+        <a href="https://www.facebook.com/pages/FILMUA-Group/137015176317180" target="_blank" class="facebook"></a>
+        <a href="https://www.instagram.com/filmua/" target="_blank" class="instagram"></a>
+        <a href="https://t.me/filmuagroup" target="_blank" class="telegram"></a>
+        <a href="https://www.youtube.com/user/FilmUaGroup?feature=mhee" target="_blank" class="yt"></a>
+        <a href="https://www.amazon.com/gp/video/storefront/ref=atv_app_avd_vnt_plp_RzNNNUY?ie=UTF8&plpId=RzNNNUY" target="_blank" class="amazon"></a>
+        <a href="https://pro.imdb.com/company/co0352409/maindetails" target="_blank" class="imdb"></a>
+        <a href="https://www.linkedin.com/company/1084187?trk=tyah" target="_blank" class="linkedin"></a>
+        <a href="https://twitter.com/filmuagroup" target="_blank" class="twitter"></a>
+      </div>
+
+      <div class="b-lang" id="lang-block">
+
+              </div>
+    </div>
+  </div>
+
+  <div class="b-main-menu" id="main-menu">
+    <div class="h-main-menu">
+      <a href="javascript:;" class="closemenu" onclick="$('#main-menu').toggle(); $('#main-menu').toggleClass('open')"></a>
+      <div class="b-top-menu">
+        <div class="b-top-menu-links">
+          <ul>
+                        <li><a href="/uk/production" class="production">Продакшн</a></li>
+            <li><a href="/uk/postproduction" class="postproduction">Постпродакшн</a></li>
+            <li><a href="/uk/studio" class="studio active">Студійний комплекс</a></li>
+            <li><a href="/uk/distribution" class="distribution">Дистрибуція</a></li>
+            <li><a href="/uk/broadcasting" class="broadcasting">Бродкастинг</a></li>
+            <li><a href="/uk/consulting" class="consulting">Медіаконсалтинг</a></li>
+            <li><a href="/uk/education" class="faculty">Освітні проекти</a></li>
+            <li><a href="/uk/unglobalcompact" class="unglobalcompact">We Support UN Global Compact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-page-line">
+  <div class="h-page-line">
+    <div class="b-page-name">Замовлення</div>
+  </div>
+
+</div>
+
+<div class="b-body-content">
+  <div class="b-wrap">
+    <div class="b-page clear">
+      <div class="b-content clear">
+
+    <div class="b-content-area">
+
+      <div class="b-block-holder">
+  <div class="b-static-text clear">
+
+        {% block content %}{% endblock %}
+
+  </div>
+
+
+    </div>
+
+    </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-footer">
+  <div class="b-copyright">
+    <div class="h-copyright">
+      <div class="b-copyright-address"><p>FILM.UA Group</p>
+<p>вул. Миколи Закревського, 22, м. Київ, 02232, Україна</p>
+<p>тел.: 0 800 308 028, +380 44 501-39-71     факс: +380 44 546-68-97     e-mail: <a href="mailto:info@film.ua">info@film.ua</a></p></div>
+      <div class="b-copyright-text">Copyright © FILM.UA Group 2023. <p>Сайт розроблено в <a href="http://argentum.ua">Argentum IT Lab</a></p> <a href="https://film.ua/uk/" class="link"></a></div>
+      <div class="b-footer-social">
+        <a href="https://www.facebook.com/pages/FILMUA-Group/137015176317180" target="_blank" class="facebook"></a>
+        <a href="https://www.instagram.com/filmua/" target="_blank" class="instagram"></a>
+        <a href="https://t.me/filmuagroup" target="_blank" class="telegram"></a>
+        <a href="https://www.youtube.com/user/FilmUaGroup?feature=mhee" target="_blank" class="yt"></a>
+        <a href="https://www.amazon.com/gp/video/storefront/ref=atv_app_avd_vnt_plp_RzNNNUY?ie=UTF8&plpId=RzNNNUY" target="_blank" class="amazon"></a>
+        <a href="https://pro.imdb.com/company/co0352409/maindetails" target="_blank" class="imdb"></a>
+        <a href="https://www.linkedin.com/company/1084187?trk=tyah" target="_blank" class="linkedin"></a>
+        <a href="https://twitter.com/filmuagroup" target="_blank" class="twitter"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/zakupivli.js' %}"></script>
+
+        {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>
