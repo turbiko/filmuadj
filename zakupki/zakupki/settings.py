@@ -147,7 +147,7 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['film.ua', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://film.ua', 'http://127.0.0.1', 'http://localhost']
 
 CORS_ALLOWED_ORIGINS = [
     "https://film.ua",
