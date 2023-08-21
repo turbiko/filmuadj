@@ -12,12 +12,19 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from pathlib import Path
+
 from django.utils.translation import gettext_lazy as _
 
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+# PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+print('PROJECT_DIR: ', PROJECT_DIR)
+print('BASE_DIR: ', BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -125,6 +132,8 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ('en', _('English')),
 ]
 
+WAGTAIL_I18N_ENABLED = True
+
 TIME_ZONE = "UTC"
 
 USE_I18N = True
@@ -134,6 +143,9 @@ USE_L10N = True
 USE_TZ = True
 
 WAGTAIL_I18N_ENABLED = True
+
+# https://docs.wagtail.org/en/stable/reference/contrib/simple_translation.html
+WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -187,4 +199,4 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://film.ua"
+WAGTAILADMIN_BASE_URL = "http://film.ua/infotable"
