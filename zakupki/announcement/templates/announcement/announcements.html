@@ -12,7 +12,8 @@
 
 {% for item in announcements %}
 <br>
-<h2><a href="{{item.id}}">{{item.title}}</a></h2>
+
+<h2><a href="{% url 'announcement:announcement_detail' pk=item.pk %}">{{item.title}}</a></h2>
 
 <p>початок {{item.start_date}} до {{item.end_date}} включно<p>
 

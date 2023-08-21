@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Announcement
 
-def announcement(request, pk):
+def announcement_detail(request, pk):
     context = {}
     zakup_item = get_object_or_404(Announcement, pk=pk)
     context['announcement'] = zakup_item
