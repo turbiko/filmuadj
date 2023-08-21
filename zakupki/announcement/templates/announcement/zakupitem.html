@@ -1,0 +1,23 @@
+{% extends "film_base.html" %}
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+      announcement/zakup_item.html
+{{item_exist}}<br>
+{{announcement.title}}<br>
+{{announcement.description}}<br>
+{{announcement.template_document.url}}<br>
+{{announcement.start_date}}<br>
+{{announcement.end_date}}<br>
+{% endblock content %}
+
+
+

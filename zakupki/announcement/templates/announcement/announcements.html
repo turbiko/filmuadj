@@ -1,0 +1,23 @@
+{% extends "film_base.html" %}
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% block content %}
+announcement/announcements.html <br>
+
+{% for item in announcements %}
+<br>
+<h2><a href="announcement/{{item.id}}">{{item.title}}</a></h2>
+
+<p>початок {{item.start_date}} до {{item.end_date}} включно<p>
+
+{% endfor %}
+
+{% endblock content %}
+
