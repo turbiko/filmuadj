@@ -149,6 +149,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://film.ua",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
