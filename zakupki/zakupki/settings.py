@@ -143,7 +143,12 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-
+ALLOWED_HOSTS = [
+    "film.ua",
+    "www.film.ua",
+    '127.0.0.1',
+    'localhost',
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
