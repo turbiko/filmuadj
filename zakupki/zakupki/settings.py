@@ -149,6 +149,8 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://film.ua",
+    "https://127.0.0.1",
+    "https://localhost",
     "http://film.ua",
 ]
 
