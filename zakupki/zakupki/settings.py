@@ -31,9 +31,6 @@ SECRET_KEY = 'django-insecure-^ym5pgfmo09&&5#z=)w&sci69i_8e2n1%f)j-ni(5^$rb_d4q5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -152,6 +149,7 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://film.ua",
+    "http://film.ua",
 ]
 
 # Default primary key field type
