@@ -9,11 +9,10 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 {% block content %}
-announcement/announcements.html <br>
 
 {% for item in announcements %}
 <br>
-<h2><a href="announcement/{{item.id}}">{{item.title}}</a></h2>
+<h2><a href="{{item.id}}">{{item.title}}</a></h2>
 
 <p>початок {{item.start_date}} до {{item.end_date}} включно<p>
 
