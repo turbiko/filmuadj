@@ -20,8 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('announcement.urls'))
+    path('infotable/admin/', admin.site.urls),
+    path('infotable/', include('announcement.urls'))
 ]
 
 if settings.DEBUG:
