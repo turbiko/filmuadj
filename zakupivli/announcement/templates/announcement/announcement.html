@@ -4,9 +4,12 @@
 
 <h2>{{self.title}}</h2> <br>
 {{self.body|safe}}<br>
-{{self.template_document.url}}<br>
-{{self.date_start}}<br>
-{{self.date_end}}<br>
+
+<a href = "{{self.template_document.url}}" download = "{{self.template_document.name}}">
+{{self.template_document.name}}</a> <br>
+<p> Термін подання з {{self.date_start}} до {{self.date_end}}</p>
+<br>
+
 {% endblock content %}
 
 
