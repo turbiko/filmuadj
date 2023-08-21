@@ -2,11 +2,11 @@
 
 {% block content %}
 
-{{self.title}}<br>
+<h2>{{self.title}}</h2> <br>
 {{self.body|safe}}<br>
 {{self.template_document.url}}<br>
-{{self.start_date}}<br>
-{{self.end_date}}<br>
+{{self.date_start}}<br>
+{{self.date_end}}<br>
 {% endblock content %}
 
 
