@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'announcement.apps.AnnouncementConfig',
     "home",
     "search",
+    'wagtail.api.v2',  # added for API https://docs.wagtail.org/en/stable/advanced_topics/api/v2/configuration.html
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
