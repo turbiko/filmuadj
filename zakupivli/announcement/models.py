@@ -14,14 +14,16 @@ def class_folder(instance, filename):
 
 class Announcement(Page):
     body = RichTextField(blank=True)
-    date_start = models.DateField(verbose_name=_('Started'), auto_now_add=False, blank=True, null=True, )
-    date_end = models.DateField(verbose_name=_('Ended'), auto_now_add=False, blank=True, null=True, )
+    date_start = models.DateField(verbose_name=_('Початок'), auto_now_add=False, blank=True, null=True, )
+    date_end = models.DateField(verbose_name=_('Закінчення'), auto_now_add=False, blank=True, null=True, )
+    time_end = models.TimeField(verbose_name=_('Час закінчення подачі'), blank=True, null=True)
     template_document = models.FileField(upload_to=class_folder, blank=True, null=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('body'),
         FieldPanel('date_start'),
         FieldPanel('date_end'),
+        FieldPanel('time_end'),
         FieldPanel('template_document'),
     ]
 
